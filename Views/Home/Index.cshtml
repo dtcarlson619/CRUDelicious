@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center">
+    <h1 class="display-4 text-primary">Welcome to CRUDelicious</h1>
+    <h2>Check out some recent dishes</h2>
+    <a href="new"><input type="button" value="Add a Dish" class="btn btn-primary"></a>
+</div><br>
+<div>
+    <ul>
+    @foreach(Dish dish in Model)
+    {
+            <li>
+                <p class="font-weight-bold"><a href="@dish.DishId">@dish.Name</a> by @dish.Chef</p>
+                <p class="font-weight-light">created at: @dish.CreatedAt, updated at: @dish.UpdatedAt</p>
+            </li>
+        
+    }
+    </ul>
+</div>
